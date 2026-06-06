@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "name": "Amina Hassan",
+    "username": "amina_h",
+    "email": "amina.hassan@example.com",
+    "bio": "Content strategist and community manager.",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "name": "Daniel Okonkwo",
+    "username": "dan_ok",
+    "email": "dan.okonkwo@example.com",
+    "bio": "Full-stack developer with a passion for storytelling.",
+    "role": "editor"
+  },
+  {
+    "id": 3,
+    "name": "Priya Patel",
+    "username": "priya_p",
+    "email": "priya.patel@example.com",
+    "bio": "Digital marketer focused on user experience.",
+    "role": "author"
+  },
+  {
+    "id": 4,
+    "name": "Noah Bennett",
+    "username": "noah_b",
+    "email": "noah.bennett@example.com",
+    "bio": "SEO specialist and content analyst.",
+    "role": "author"
+  },
+  {
+    "id": 5,
+    "name": "Layla Ahmed",
+    "username": "layla_a",
+    "email": "layla.ahmed@example.com",
+    "bio": "Writer and product researcher.",
+    "role": "editor"
+  },
+  {
+    "id": 6,
+    "name": "Mateo Cruz",
+    "username": "mateo_c",
+    "email": "mateo.cruz@example.com",
+    "bio": "Front-end engineer and accessibility advocate.",
+    "role": "author"
+  },
+  {
+    "id": 7,
+    "name": "Sophia Kim",
+    "username": "sophia_k",
+    "email": "sophia.kim@example.com",
+    "bio": "Product designer who loves clear writing.",
+    "role": "author"
+  },
+  {
+    "id": 8,
+    "name": "Elijah Osei",
+    "username": "elijah_o",
+    "email": "elijah.osei@example.com",
+    "bio": "Technical editor and developer relations lead.",
+    "role": "editor"
+  },
+  {
+    "id": 9,
+    "name": "Maya Rossi",
+    "username": "maya_r",
+    "email": "maya.rossi@example.com",
+    "bio": "Social media strategist and copywriter.",
+    "role": "author"
+  },
+  {
+    "id": 10,
+    "name": "Omar Khalid",
+    "username": "omar_k",
+    "email": "omar.khalid@example.com",
+    "bio": "Data journalist with a love for product stories.",
+    "role": "author"
+  },
+  {
+    "id": 11,
+    "name": "Mohamed Waleed",
+    "username": "mw205",
+    "email": "mw205@mw205.com",
+    "bio": "Mohamed waleed",
+    "role": "user"
+  }
+]

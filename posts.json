@@ -1,0 +1,219 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "title": "Post 1 by Amina Hassan",
+    "body": "This is the body of post 1 written by Amina Hassan. It contains some interesting thoughts and insights.",
+    "views": 626
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "title": "Post 2 by Amina Hassan",
+    "body": "This is the body of post 2 written by Amina Hassan. It contains some interesting thoughts and insights.",
+    "views": 801
+  },
+  {
+    "id": 3,
+    "userId": 1,
+    "title": "Post 3 by Amina Hassan",
+    "body": "This is the body of post 3 written by Amina Hassan. It contains some interesting thoughts and insights.",
+    "views": 307
+  },
+  {
+    "id": 4,
+    "userId": 2,
+    "title": "Post 1 by Daniel Okonkwo",
+    "body": "This is the body of post 1 written by Daniel Okonkwo. It contains some interesting thoughts and insights.",
+    "views": 841
+  },
+  {
+    "id": 5,
+    "userId": 2,
+    "title": "Post 2 by Daniel Okonkwo",
+    "body": "This is the body of post 2 written by Daniel Okonkwo. It contains some interesting thoughts and insights.",
+    "views": 750
+  },
+  {
+    "id": 6,
+    "userId": 2,
+    "title": "Post 3 by Daniel Okonkwo",
+    "body": "This is the body of post 3 written by Daniel Okonkwo. It contains some interesting thoughts and insights.",
+    "views": 691
+  },
+  {
+    "id": 7,
+    "userId": 3,
+    "title": "Post 1 by Priya Patel",
+    "body": "This is the body of post 1 written by Priya Patel. It contains some interesting thoughts and insights.",
+    "views": 131
+  },
+  {
+    "id": 8,
+    "userId": 3,
+    "title": "Post 2 by Priya Patel",
+    "body": "This is the body of post 2 written by Priya Patel. It contains some interesting thoughts and insights.",
+    "views": 942
+  },
+  {
+    "id": 9,
+    "userId": 3,
+    "title": "Post 3 by Priya Patel",
+    "body": "This is the body of post 3 written by Priya Patel. It contains some interesting thoughts and insights.",
+    "views": 284
+  },
+  {
+    "id": 10,
+    "userId": 4,
+    "title": "Post 1 by Noah Bennett",
+    "body": "This is the body of post 1 written by Noah Bennett. It contains some interesting thoughts and insights.",
+    "views": 252
+  },
+  {
+    "id": 11,
+    "userId": 4,
+    "title": "Post 2 by Noah Bennett",
+    "body": "This is the body of post 2 written by Noah Bennett. It contains some interesting thoughts and insights.",
+    "views": 41
+  },
+  {
+    "id": 12,
+    "userId": 4,
+    "title": "Post 3 by Noah Bennett",
+    "body": "This is the body of post 3 written by Noah Bennett. It contains some interesting thoughts and insights.",
+    "views": 731
+  },
+  {
+    "id": 13,
+    "userId": 5,
+    "title": "Post 1 by Layla Ahmed",
+    "body": "This is the body of post 1 written by Layla Ahmed. It contains some interesting thoughts and insights.",
+    "views": 28
+  },
+  {
+    "id": 14,
+    "userId": 5,
+    "title": "Post 2 by Layla Ahmed",
+    "body": "This is the body of post 2 written by Layla Ahmed. It contains some interesting thoughts and insights.",
+    "views": 772
+  },
+  {
+    "id": 15,
+    "userId": 5,
+    "title": "Post 3 by Layla Ahmed",
+    "body": "This is the body of post 3 written by Layla Ahmed. It contains some interesting thoughts and insights.",
+    "views": 491
+  },
+  {
+    "id": 16,
+    "userId": 6,
+    "title": "Post 1 by Mateo Cruz",
+    "body": "This is the body of post 1 written by Mateo Cruz. It contains some interesting thoughts and insights.",
+    "views": 745
+  },
+  {
+    "id": 17,
+    "userId": 6,
+    "title": "Post 2 by Mateo Cruz",
+    "body": "This is the body of post 2 written by Mateo Cruz. It contains some interesting thoughts and insights.",
+    "views": 886
+  },
+  {
+    "id": 18,
+    "userId": 6,
+    "title": "Post 3 by Mateo Cruz",
+    "body": "This is the body of post 3 written by Mateo Cruz. It contains some interesting thoughts and insights.",
+    "views": 618
+  },
+  {
+    "id": 19,
+    "userId": 7,
+    "title": "Post 1 by Sophia Kim",
+    "body": "This is the body of post 1 written by Sophia Kim. It contains some interesting thoughts and insights.",
+    "views": 177
+  },
+  {
+    "id": 20,
+    "userId": 7,
+    "title": "Post 2 by Sophia Kim",
+    "body": "This is the body of post 2 written by Sophia Kim. It contains some interesting thoughts and insights.",
+    "views": 899
+  },
+  {
+    "id": 21,
+    "userId": 7,
+    "title": "Post 3 by Sophia Kim",
+    "body": "This is the body of post 3 written by Sophia Kim. It contains some interesting thoughts and insights.",
+    "views": 157
+  },
+  {
+    "id": 22,
+    "userId": 8,
+    "title": "Post 1 by Elijah Osei",
+    "body": "This is the body of post 1 written by Elijah Osei. It contains some interesting thoughts and insights.",
+    "views": 88
+  },
+  {
+    "id": 23,
+    "userId": 8,
+    "title": "Post 2 by Elijah Osei",
+    "body": "This is the body of post 2 written by Elijah Osei. It contains some interesting thoughts and insights.",
+    "views": 640
+  },
+  {
+    "id": 24,
+    "userId": 8,
+    "title": "Post 3 by Elijah Osei",
+    "body": "This is the body of post 3 written by Elijah Osei. It contains some interesting thoughts and insights.",
+    "views": 54
+  },
+  {
+    "id": 25,
+    "userId": 9,
+    "title": "Post 1 by Maya Rossi",
+    "body": "This is the body of post 1 written by Maya Rossi. It contains some interesting thoughts and insights.",
+    "views": 926
+  },
+  {
+    "id": 26,
+    "userId": 9,
+    "title": "Post 2 by Maya Rossi",
+    "body": "This is the body of post 2 written by Maya Rossi. It contains some interesting thoughts and insights.",
+    "views": 743
+  },
+  {
+    "id": 27,
+    "userId": 9,
+    "title": "Post 3 by Maya Rossi",
+    "body": "This is the body of post 3 written by Maya Rossi. It contains some interesting thoughts and insights.",
+    "views": 561
+  },
+  {
+    "id": 28,
+    "userId": 10,
+    "title": "Post 1 by Omar Khalid",
+    "body": "This is the body of post 1 written by Omar Khalid. It contains some interesting thoughts and insights.",
+    "views": 224
+  },
+  {
+    "id": 29,
+    "userId": 10,
+    "title": "Post 2 by Omar Khalid",
+    "body": "This is the body of post 2 written by Omar Khalid. It contains some interesting thoughts and insights.",
+    "views": 694
+  },
+  {
+    "id": 30,
+    "userId": 10,
+    "title": "Post 3 by Omar Khalid",
+    "body": "This is the body of post 3 written by Omar Khalid. It contains some interesting thoughts and insights.",
+    "views": 708
+  },
+  {
+    "id": 31,
+    "userId": 10,
+    "title": "Post 4 by user 10",
+    "body": "This is the body of post 3 written by user 10. It contains some interesting thoughts and insights.",
+    "views": 31
+  }
+]
