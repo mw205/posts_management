@@ -1,4 +1,6 @@
+
 const userService = require("../services/usersService.js");
+const APIError = require("../utils/APIError.js");
 
 const getUsers = async (req, res) => {
   const users = await userService.readUsers();
@@ -10,12 +12,12 @@ const getUsers = async (req, res) => {
 const getUserById = async (req, res) => {
   const id = req.params.id;
   const user = await userService.getUserById(id);
-  if (user) {
-    return res
-      .status(200)
-      .json({ message: "User fetched successfully!!", data: user });
+  if (!user) {
+    throw new APIError("User not found", 404);
   }
-  return res.status(404).json({ message: "User not found" });
+  return res
+    .status(200)
+    .json({ message: "User fetched successfully!!", data: user });
 };
 
 const createUser = async (req, res) => {
@@ -28,23 +30,20 @@ const updateUser = async (req, res) => {
   const id = req.params.id;
 
   const user = await userService.updateUser(id, req.body);
-  if (user) {
-    return res
-      .status(200)
-      .json({ message: "User updated successfully!!", data: user });
+  if (!user) {
+    throw new APIError("User not found", 404);
   }
-  return res.status(404).json({ message: "User not found" });
+  return res
+    .status(200)
+    .json({ message: "User updated successfully!!", data: user });
 };
 const deleteUser = async (req, res) => {
   const id = req.params.id;
-  const deletedUser = await userService.deleteUser(id);
-  if (deletedUser) {
-    return res
-      .status(200)
-      .json({ message: "User deleted successfully!!", data: deletedUser });
-  } else {
-    return res.status(404).json({ message: "User not found" });
+  const deleteUser = await userService.deleteUser(id);
+  if (!deleteUser) {
+    throw new APIError("user not found", 404);
   }
+  res.json({ message: "user deleted successfully" });
 };
 module.exports = {
   getUserById,
