@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Donation</title>
+</head>
+
+<body style="margin: 0; padding: 0; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; color: #334155; line-height: 1.6;">
+    <div style="max-width: 560px; margin: 40px auto; padding: 20px; box-sizing: border-box;">
+        <!-- Header -->
+        <h1 style="color: #0f172a; font-size: 24px; font-weight: 700; margin-top: 0; margin-bottom: 20px; letter-spacing: -0.02em;">
+            Thank you, <%= name %>!
+        </h1>
+
+        <!-- Thank-you Message -->
+        <p style="margin-top: 0; margin-bottom: 20px; font-size: 16px;">
+            We have successfully received your donation. Your support makes a big difference to our community!
+        </p>
+
+        <!-- Donation Details Card -->
+        <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 28px 0;">
+            <h2 style="color: #0f172a; font-size: 16px; font-weight: 600; margin-top: 0; margin-bottom: 16px;">
+                Donation Details
+            </h2>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="font-size: 15px;">
+                <tr>
+                    <td style="color: #64748b; padding-bottom: 8px;" width="130">Amount:</td>
+                    <td style="color: #0f172a; font-weight: 600; padding-bottom: 8px;"><%= amount %> EGP</td>
+                </tr>
+                <tr>
+                    <td style="color: #64748b;">Donation ID:</td>
+                    <td style="color: #0f172a; font-family: monospace; font-size: 14px;"><%= donationId %></td>
+                </tr>
+            </table>
+        </div>
+
+        <p style="margin-top: 0; margin-bottom: 24px; font-size: 16px;">
+            Please keep the Donation ID above as a reference for your records. If you have any questions, feel free to reply directly to this email.
+        </p>
+
+        <!-- Footer / Sign-off -->
+        <div style="border-top: 1px solid #f1f5f9; padding-top: 24px; font-size: 14px; color: #64748b;">
+            <p style="margin: 0 0 4px 0;">Best regards,</p>
+            <strong style="color: #334155;">The Platform Team</strong>
+        </div>
+    </div>
+</body>
+
+</html>

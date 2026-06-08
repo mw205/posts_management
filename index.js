@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
@@ -8,11 +9,11 @@ const { xss } = require("express-xss-sanitizer");
 const hpp = require("hpp");
 const usersRouter = require("./routes/usersRouter.js");
 const postsRouter = require("./routes/postsRouter.js");
+const donationRouter = require("./routes/donationRouter.js");
 const errorHandler = require("./middlewares/errorHandler.js");
 
 const mongoose = require("mongoose");
 const { limiter } = require("./middlewares/index.js");
-require("dotenv").config();
 
 const { PORT } = process.env;
 
@@ -31,6 +32,7 @@ app.use(limiter);
 
 app.use("/users", usersRouter);
 app.use("/posts", postsRouter);
+app.use("/donations", donationRouter);
 app.use(errorHandler);
 
 app.listen(port, async () => {

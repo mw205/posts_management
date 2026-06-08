@@ -1,6 +1,6 @@
 const userService = require("../services/usersService.js");
 const APIError = require("../utils/APIError.js");
-
+const emailService = require("../services/emailService.js");
 const getUsers = async (req, res) => {
   const users = await userService.readUsers();
   return res
@@ -29,6 +29,12 @@ const signUp = async (req, res) => {
   const token = await userService.generateToken(newUser);
   const newUserObj = newUser.toObject();
   delete newUserObj.password;
+  await emailService.sendEmail(
+    "welcome",
+    { name: newUser.name },
+    newUser.email,
+    "Welcome to our platform",
+  );
   res.status(201).json({
     message: "user created successfully",
     data: { ...newUserObj, accessToken: token },
@@ -46,7 +52,7 @@ const signIn = async (req, res) => {
       const token = await userService.generateToken(user);
       const userObj = user.toObject();
       delete userObj.password;
-      res.json({
+      return res.json({
         message: "user signd in successfully",
         data: { ...userObj, accessToken: token },
       });
