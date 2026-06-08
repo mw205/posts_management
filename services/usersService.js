@@ -1,76 +1,20 @@
-// const { write } = require("fs");
-// const path = require("path");
-// const { json } = require("stream/consumers");
-
-// const fs = require("fs").promises;
-// const usersFileName = path.join(__dirname, "../users.json");
-
-// const readUsers = async () => {
-//   const usersData = await fs.readFile(usersFileName, "utf-8");
-//   return JSON.parse(usersData);
-// };
-
-// const writeUsers = async (users) => {
-//   await fs.writeFile(usersFileName, JSON.stringify(users));
-// };
-
-// const createUser = async (user) => {
-//   const users = await readUsers();
-//   const newUser = {
-//     id: users.length + 1,
-//     ...user,
-//   };
-//   users.push(newUser);
-//   await writeUsers(users);
-//   return newUser;
-// };
-// const getUserById = async (id) => {
-//   const users = await readUsers();
-//   const user = users.find((user) => user.id === +id);
-//   return user;
-// };
-// const updateUser = async (id, user) => {
-//   const users = await readUsers();
-
-//   const userIndex = users.findIndex((user) => user.id === +id);
-//   if (userIndex === -1) {
-//     return null;
-//   }
-//   users[userIndex] = { ...users[userIndex], ...user };
-//   await writeUsers(users);
-//   return users[userIndex];
-// };
-
-// const deleteUser = async (id) => {
-//   const users = await readUsers();
-//   const userIndex = users.findIndex((user) => user.id === +id);
-//   if (userIndex === -1) {
-//     return null;
-//   }
-//   users.filter((user) => user.id !== +id);
-//   await writeUsers(users);
-//   return true;
-// };
-
-// module.exports = {
-//   createUser,
-//   readUsers,
-//   getUserById,
-//   updateUser,
-//   deleteUser,
-//   readUsers,
-// };
-
 const mongoose = require("mongoose");
 const User = require("../models/userModel.js");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const util = require("util");
+const signToken = util.promisify(jwt.sign);
+require("dotenv").config();
 const readUsers = async () => {
   const users = await User.find();
   return users;
 };
-const createUser = async (user) => {
+const signUp = async (user) => {
+  const hashedPassword = await bcrypt.hash(user.password, 10);
   const mappedUser = {
     ...user,
     dateOfBirth: new Date(user.dateOfBirth),
+    password: hashedPassword,
   };
   const newUser = await User.create(mappedUser);
   return newUser;
@@ -80,7 +24,13 @@ const getUserById = async (id) => {
   const user = await User.findById(id);
   return user;
 };
-
+const getUserByEmail = async (email, includePassword = false) => {
+  const query = User.findOne({ email: email });
+  if (includePassword) {
+    query.select("+password");
+  }
+  return await query;
+};
 const updateUser = async (id, user) => {
   const updatedUser = await User.findOneAndUpdate({ _id: id }, user, {
     new: true,
@@ -91,10 +41,28 @@ const deleteUser = async (id) => {
   const deletedUser = await User.findOneAndDelete({ _id: id });
   return deleteUser;
 };
+
+const comparePasswords = async (password, hashedPassword) => {
+  return await bcrypt.compare(password, hashedPassword);
+};
+
+const generateToken = async (user) => {
+  const payload = {
+    id: user._id,
+    email: user.email,
+    role: user.role,
+  };
+  const secretKey = process.env.JWT_SECRET;
+  const options = { expiresIn: "1h" };
+  return await signToken(payload, secretKey, options);
+};
 module.exports = {
-  createUser,
+  signUp,
   readUsers,
   getUserById,
   updateUser,
   deleteUser,
+  getUserByEmail,
+  comparePasswords,
+  generateToken,
 };

@@ -5,7 +5,9 @@ const postsController = require("../controllers/postsController.js");
 const validate = require("../middlewares/validate.js");
 const createPostSchema = require("../validations/posts/createPostSchema.js");
 const updatePostSchema = require("../validations/posts/updatePostSchema.js");
+const { authenticate } = require("../middlewares");
 
+router.use(authenticate);
 router.get("/", postsController.getPosts);
 router.get("/:id", postsController.getPostById);
 router.post("/", validate(createPostSchema), postsController.createPost);

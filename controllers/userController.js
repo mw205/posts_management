@@ -1,4 +1,3 @@
-
 const userService = require("../services/usersService.js");
 const APIError = require("../utils/APIError.js");
 
@@ -20,10 +19,40 @@ const getUserById = async (req, res) => {
     .json({ message: "User fetched successfully!!", data: user });
 };
 
-const createUser = async (req, res) => {
-  const newUser = await userService.createUser(req.body);
+const signUp = async (req, res) => {
+  // check for email if it already exists
+  const emailExists = await userService.getUserByEmail(req.body.email);
+  if (emailExists) {
+    throw new APIError("Email already exists", 400);
+  }
+  const newUser = await userService.signUp(req.body);
+  const token = await userService.generateToken(newUser);
+  const newUserObj = newUser.toObject();
+  delete newUserObj.password;
+  res.status(201).json({
+    message: "user created successfully",
+    data: { ...newUserObj, accessToken: token },
+  });
+};
 
-  res.status(201).json({ message: "user created successfully", data: newUser });
+const signIn = async (req, res) => {
+  const user = await userService.getUserByEmail(req.body.email, true);
+  if (user) {
+    const isPasswordCorrect = await userService.comparePasswords(
+      req.body.password,
+      user.password,
+    );
+    if (isPasswordCorrect) {
+      const token = await userService.generateToken(user);
+      const userObj = user.toObject();
+      delete userObj.password;
+      res.json({
+        message: "user signd in successfully",
+        data: { ...userObj, accessToken: token },
+      });
+    }
+  }
+  throw new APIError("Invalid email or password", 401);
 };
 
 const updateUser = async (req, res) => {
@@ -48,7 +77,8 @@ const deleteUser = async (req, res) => {
 module.exports = {
   getUserById,
   getUsers,
-  createUser,
+  signUp,
   updateUser,
   deleteUser,
+  signIn,
 };

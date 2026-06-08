@@ -4,7 +4,6 @@ const postSchema = joi
   .object({
     title: joi.string().required(),
     body: joi.string().required(),
-    userId: joi.string().required(),
     views: joi.number().default(0).min(0),
   })
   .unknown(false);
